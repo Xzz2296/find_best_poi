@@ -1,16 +1,4 @@
-CREATE TABLE beijing_img_poi (
-  img_key PRIMARY KEY,
-  id1 INT,
-  distance1 FLOAT,
-  id2 INT,
-  distance2 FLOAT,
-  id3 INT,
-  distance3 FLOAT,
-  id4 INT,
-  distance4 FLOAT,
-  id5 INT,
-  distance5 FLOAT
-) AS
+CREATE TABLE beijing_img_poi AS
 SELECT
   img_key,
   MAX(CASE WHEN rn = 1 THEN id END) AS id1,
