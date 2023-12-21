@@ -1,6 +1,6 @@
 CREATE TABLE beijing_img_poi AS
 SELECT
-  img_key,
+  img_key PRIMARY KEY,
   id,
   distance
 FROM (
