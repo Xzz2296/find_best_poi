@@ -3,7 +3,7 @@
 -- CREATE INDEX beijing_geom_gist ON beijing USING gist(geom)
 
 -- CREATE INDEX idx_beijing_img_location_longitude_latitude ON beijing_img_location (longitude, latitude);
--- CREATE INDEX idx_img_key_location_karachi ON karachi_img_location (img_key);
+
 -- ceate table xx as
 
 -- table改名
