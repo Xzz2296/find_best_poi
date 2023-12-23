@@ -11,3 +11,9 @@
 -- 下载table到本地csv 需要进入psql命令行，连接41服务器即可
 -- psql -U svail svaildb
 -- \copy (select * from delhi_img_poi) to '/workspace/xpj/delhi_img_poi.csv' with csv header
+
+--下载所有表到本地
+-- psql -U svail svaildb
+-- 查看shell 脚本 通俗易懂
+
+
