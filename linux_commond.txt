@@ -1,0 +1,2 @@
+移动数据，但数据量太大，mv命令不支持，可以先find,后执行mv
+find . -name "*.npz" -exec mv {} /workspace/DATA/xpj/dataset/mapillary/chennai_npz/ \;
