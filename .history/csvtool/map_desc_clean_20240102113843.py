@@ -1,8 +1,8 @@
 import pandas as pd
 from tqdm import tqdm
 # Read the data
-file_path = r'E:\xpj\research\POI\desc_Map\Cleveland_img_desc.csv'
-clean_path = r'E:\xpj\research\POI\desc_clean\Cleveland_img_desc_clean.csv'
+file_path = r'E:\xpj\research\POI\desc_Map\Bangkok_img_desc.csv'
+clean_path = r'E:\xpj\research\POI\desc_clean\Bangkok_img_desc_clean.csv'
 df = pd.read_csv(file_path,encoding='utf-8')
 
 # 新建一个列，用于存储key

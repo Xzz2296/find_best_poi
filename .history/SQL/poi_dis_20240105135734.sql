@@ -22,9 +22,3 @@
 -- select *
 -- from mombasa_img_location
 
--- 合并两个键，将第二列的值合并到第一列
---UPDATE mombasa_img_location
---SET img_key = COALESCE(img_key, img_id);
---SET longitude = COALESCE(longitude, lon);
---SET latitude = COALESCE(latitude, lat);
-

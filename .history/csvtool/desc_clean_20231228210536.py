@@ -1,8 +1,8 @@
 import pandas as pd
 from tqdm import tqdm
 # Read the data
-file_path = r'E:\xpj\research\POI\desc_Map\Cleveland_img_desc.csv'
-clean_path = r'E:\xpj\research\POI\desc_clean\Cleveland_img_desc_clean.csv'
+file_path = r'E:\xpj\research\POI\desc_Google\saopaulo_desc.csv'
+clean_path = r'E:\xpj\research\POI\desc_Google\saopaulo_desc_clean.csv'
 df = pd.read_csv(file_path,encoding='utf-8')
 
 # 新建一个列，用于存储key
@@ -18,9 +18,7 @@ for file in tqdm(files, desc='正在处理', total=len(files)):
         # index = file.index('_')
         # # 如果'_'的下一位是数字，则返回'_'的位置
         # if file[index+1].isdigit():
-        file_name =file.split('/')[-1]
-        key =file_name.split('.')[0]
-        # key = file[:22]
+        key = file[:22]
         df.loc[df['image'] == file, 'key'] = key
     except Exception as e:
         continue
