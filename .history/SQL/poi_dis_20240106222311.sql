@@ -12,17 +12,6 @@
 -- psql -U svail svaildb
 -- \copy (select * from delhi_img_poi) to '/workspace/xpj/delhi_img_poi.csv' with csv header
 
--- 上传csv到服务器
--- psql -U postgres postgres
--- COPY kolkata FROM 'E:\xpj\research\POI\psqlcsv\kolkata.csv' WITH (FORMAT CSV, HEADER true, DELIMITER ',');
-
---导出sql文件 shell中执行
---pg_dump -U username -d database -t table -f table.sql
-
---导入sql文件 psql命令行中执行
---psql -U username -d database -f table.sql
-
-
 --下载所有表到本地
 -- psql -U svail svaildb
 -- 查看服务器上的shell 脚本 

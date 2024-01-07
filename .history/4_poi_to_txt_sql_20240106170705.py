@@ -28,12 +28,12 @@ pd.set_option('display.max_colwidth', None)
 
 
 poi_path =r'E:\xpj\research\POI\psqlcsv\daressalaam.csv'
-poi_prompt_path =r'E:\xpj\research\POI\result\daressalaam_poi_prompt.xlsx'
+poi_prompt_path =r'/workspace/DATA/xpj/dataset/best_poi_result/daressalaam_poi_prompt.xlsx'
 image_path = r'E:\xpj\research\POI\psqlcsv\daressalaam_img_location.csv'
 image_poi_path = r'E:\xpj\research\POI\psqlcsv\daressalaam_img_poi.csv'
 desc_path =r'E:\xpj\research\POI\desc_merge\Dares-Salaam_img_desc_clean.csv'
 best_poi_path = r'E:\xpj\research\POI\result\daressalaam_best_poi.xlsx'
-desc_poi_path = r'E:\xpj\research\POI\result\daressalaam_desc_poi.xlsx'
+desc_poi_path = r'E:\xpj\research\POI\resultdaressalaam_desc_poi.xlsx'
 
 # ## poi数据（全面）
 

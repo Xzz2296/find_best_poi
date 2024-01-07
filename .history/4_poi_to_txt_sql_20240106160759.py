@@ -15,25 +15,17 @@ import torch
 
 
 # In[2]:
-pd.set_option('display.max_colwidth', None)
+pd.set_option('display.max_colwidth', -1)
 
 # In[3]:
-# poi_path =r'/workspace/DATA/xpj/dataset/sql_db/daressalaam.csv'
-# poi_prompt_path =r'/workspace/DATA/xpj/dataset/best_poi_result/daressalaam_poi_prompt.xlsx'
-# image_path = r'/workspace/DATA/xpj/dataset/sql_db/daressalaam_img_location.csv'
-# image_poi_path = r'/workspace/DATA/xpj/dataset/sql_db/daressalaam_img_poi.csv'
-# desc_path =r'/workspace/DATA/xpj/dataset/desc_merged/Dares-Salaam_img_desc_clean.csv'
-# best_poi_path = r'/workspace/DATA/xpj/dataset/best_poi_result/daressalaam_best_poi.xlsx'
-# desc_poi_path = r'/workspace/DATA/xpj/dataset/best_poi_result/daressalaam_desc_poi.xlsx'
+poi_path =r'E:\xpj\research\POI\psqlcsv\rio.csv'
+poi_prompt_path =r'E:\xpj\research\POI\result\rio_poi_prompt.xlsx'
+image_path = r'E:\xpj\research\POI\psqlcsv\rio_img_location.csv'
+image_poi_path = r'E:\xpj\research\POI\psqlcsv\rio_img_poi.csv'
+desc_path =r'E:\xpj\research\POI\desc_merge\rio_desc_merged.csv'
+best_poi_path = r'E:\xpj\research\POI\result\rio_best_poi.xlsx'
+desc_poi_path = r'E:\xpj\research\POI\result\rio_desc_poi.xlsx'
 
-
-poi_path =r'E:\xpj\research\POI\psqlcsv\daressalaam.csv'
-poi_prompt_path =r'E:\xpj\research\POI\result\daressalaam_poi_prompt.xlsx'
-image_path = r'E:\xpj\research\POI\psqlcsv\daressalaam_img_location.csv'
-image_poi_path = r'E:\xpj\research\POI\psqlcsv\daressalaam_img_poi.csv'
-desc_path =r'E:\xpj\research\POI\desc_merge\Dares-Salaam_img_desc_clean.csv'
-best_poi_path = r'E:\xpj\research\POI\result\daressalaam_best_poi.xlsx'
-desc_poi_path = r'E:\xpj\research\POI\result\daressalaam_desc_poi.xlsx'
 
 # ## poi数据（全面）
 
@@ -57,23 +49,21 @@ from transformers import AutoTokenizer, AutoModel
 import torch
 import numpy as np
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print("device:", device)
+
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+print('Using device:', device)
 # 加载BERT模型和分词器
 tokenizer = AutoTokenizer.from_pretrained(r"E:\xpj\models\bert-base-uncased")
 model = AutoModel.from_pretrained(r"E:\xpj\models\bert-base-uncased")
-model =model.to(device)
+model = model.to(device)
 # In[15]:
 
 
 # 定义计算相似度的函数
 def calc_similarity(s1, s2):
-    print(device)
     # 对句子进行分词，并添加特殊标记
     inputs = tokenizer([s1, s2], return_tensors='pt', padding=True, truncation=True)
-    # 将输入的张量移动到相同的设备上
-    inputs = {name: tensor.to(device) for name, tensor in inputs.items()}
-    #inputs = inputs.to(device)
+    inputs = inputs.to(device)
     # 将输入传递给BERT模型，并获取输出
     with torch.no_grad():
         outputs = model(**inputs)
@@ -215,3 +205,4 @@ def connect(x):
 result2 = desc_pd.apply(lambda x: connect(x), axis=1,result_type='expand')
 desc_pd['poi_prompt'] = result2
 desc_pd.to_excel(desc_poi_path)
+

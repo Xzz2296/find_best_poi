@@ -12,35 +12,20 @@
 -- psql -U svail svaildb
 -- \copy (select * from delhi_img_poi) to '/workspace/xpj/delhi_img_poi.csv' with csv header
 
--- 上传csv到服务器
--- psql -U postgres postgres
--- COPY kolkata FROM 'E:\xpj\research\POI\psqlcsv\kolkata.csv' WITH (FORMAT CSV, HEADER true, DELIMITER ',');
-
---导出sql文件 shell中执行
---pg_dump -U username -d database -t table -f table.sql
-
---导入sql文件 psql命令行中执行
---psql -U username -d database -f table.sql
-
-
 --下载所有表到本地
 -- psql -U svail svaildb
--- 查看服务器上的shell 脚本 
+-- 查看shell 脚本 通俗易懂
 
 --删除table
 --drop table malindi_img_poi
 
---查询
---select *
---from kolkata_img_location
--- where img_key is not NULL
 
 -- 复制table
 -- Create table mombasa_img_location_copy AS
 -- select *
 -- from mombasa_img_location
 
--- 合并两个键，将第二列的值合并到第一列为空的行
+-- 合并两个键，将第二列的值合并到第一列
 --UPDATE mombasa_img_location
 --SET img_key = COALESCE(img_key, img_id);
 --SET longitude = COALESCE(longitude, lon);

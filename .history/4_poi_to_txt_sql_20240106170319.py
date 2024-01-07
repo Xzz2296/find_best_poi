@@ -28,12 +28,12 @@ pd.set_option('display.max_colwidth', None)
 
 
 poi_path =r'E:\xpj\research\POI\psqlcsv\daressalaam.csv'
-poi_prompt_path =r'E:\xpj\research\POI\result\daressalaam_poi_prompt.xlsx'
+poi_prompt_path =r'/workspace/DATA/xpj/dataset/best_poi_result/daressalaam_poi_prompt.xlsx'
 image_path = r'E:\xpj\research\POI\psqlcsv\daressalaam_img_location.csv'
 image_poi_path = r'E:\xpj\research\POI\psqlcsv\daressalaam_img_poi.csv'
 desc_path =r'E:\xpj\research\POI\desc_merge\Dares-Salaam_img_desc_clean.csv'
 best_poi_path = r'E:\xpj\research\POI\result\daressalaam_best_poi.xlsx'
-desc_poi_path = r'E:\xpj\research\POI\result\daressalaam_desc_poi.xlsx'
+desc_poi_path = r'E:\xpj\research\POI\resultdaressalaam_desc_poi.xlsx'
 
 # ## poi数据（全面）
 
@@ -60,8 +60,8 @@ import numpy as np
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("device:", device)
 # 加载BERT模型和分词器
-tokenizer = AutoTokenizer.from_pretrained(r"E:\xpj\models\bert-base-uncased")
-model = AutoModel.from_pretrained(r"E:\xpj\models\bert-base-uncased")
+tokenizer = AutoTokenizer.from_pretrained(r"/workspace/DATA/xpj/model/bert-base-uncased/")
+model = AutoModel.from_pretrained(r"/workspace/DATA/xpj/model/bert-base-uncased/")
 model =model.to(device)
 # In[15]:
 
@@ -90,7 +90,7 @@ def isEnglish(s):
     return False
 # 从txt中读取tag_list
 tag_ignore_list = []
-with open(r'E:\xpj\research\POI\tag_ignore_list.txt', 'r') as f:
+with open(r'/workspace/DATA/xpj/dataset/tag_ignore_list.txt', 'r') as f:
     for line in f.readlines():
         tag_ignore_list.append(line.strip())
 # print(tag_ignore_list)
