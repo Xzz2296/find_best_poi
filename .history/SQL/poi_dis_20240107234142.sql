@@ -12,8 +12,6 @@
 -- psql -U svail svaildb
 -- \copy (select * from delhi_img_poi) to '/workspace/xpj/delhi_img_poi.csv' with csv header
 
---\copy (select * from kolkata_img_poi) to 'E:\xpj\research\POI\psqlcsv\kolkata_img_poi.csv' with csv header
-
 -- 上传csv到服务器
 -- psql -U postgres postgres
 -- COPY kolkata FROM 'E:\xpj\research\POI\psqlcsv\kolkata.csv' WITH (FORMAT CSV, HEADER true, DELIMITER ',');
@@ -71,18 +69,3 @@
 --     path character varying(254)
 -- );
 
-
-CREATE TABLE public.kolkata (
-    id integer NOT NULL,
-    geom public.geometry(Point,4326),
-    osm_id character varying(254),
-    name character varying(254),
-    barrier character varying(254),
-    highway character varying(254),
-    ref character varying(254),
-    address character varying(254),
-    is_in character varying(254),
-    place character varying(254),
-    man_made character varying(254),
-    other_tags character varying(254)
-);
