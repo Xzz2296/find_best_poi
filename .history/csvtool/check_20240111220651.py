@@ -1,4 +1,4 @@
-with open(r'E:\xpj\research\POI\check\jaja.txt') as file1, open(r'E:\xpj\research\POI\check\ja.txt') as file2:
+with open(r'E:\xpj\research\POI\check\nn.txt') as file1, open(r'E:\xpj\research\POI\check\n.txt') as file2:
     key1 =[]
     key2 =[]
     lines = file1.readlines()
